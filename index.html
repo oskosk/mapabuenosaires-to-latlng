@@ -15,12 +15,12 @@
       <h2>mapabuenosaires-to-latlng</h2>
       <p class="lead">
         Librería javascript que convierte coordenadas desde el sistema utilizado por el Mapa de Buenos Aires a Latitud Longitud WGS84.
+        Ver las <a href="https://github.com/oskosk/mapabuenosaires-to-latlng">Docs</a>.
       </p>
-      <p>
-        <a href="https://github.com/oskosk/mapabuenosaires-to-latlng">Docs</a>
-      </p>
+
       <p>
         <a class="btn btn-primary" href="#" id="getcenterlatlng">Obtener coordendas del centro del mapa</a>
+        <div id="latlng"></div>
       </p>
       <div class="row">
         <div class="col-md-12">
@@ -43,7 +43,8 @@
       });
       $("#getcenterlatlng").click(function() {
         var center = miMapa.api.getCenter();
-        alert(center);
+        center = mapaBuenosAiresToLatLng(center);
+        $("#latlng").text("Latitud: " + center.lat + ", Longitud: " + center.lon );
         return false;
       })
       
