@@ -8,7 +8,7 @@ Librería javascript que convierte coordenadas de proyección Buenos Aires Gauss
 ###Incluir el script minificado
 
 ```
-<script src="https://oskosk.github.io/dist/mapabuenosaires-to-latlng.js"
+<script src="https://oskosk.github.io/mapabuenosaires-to-latlng/dist/mapabuenosaires-to-latlng.js"
 ``` 
 
 ###Pasándole un x e y 
