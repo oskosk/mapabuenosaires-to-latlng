@@ -1,0 +1,30 @@
+{
+  "name": "mapabuenosaires-to-latlng",
+  "version": "1.0.0",
+  "description": "Librería javascript que convierte coordenadas de proyección Buenos Aires Gauss Krügger a latitud longitud (WGS84)",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.8.9"
+  },
+  "devDependencies": {
+    "gulp-concat": "~2.4.1",
+    "gulp": "~3.8.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oskosk/mapabuenosaires-to-latlng"
+  },
+  "keywords": [
+    "mapa",
+    "buenosaires",
+    "wgs84"
+  ],
+  "author": "osk <oskosk@gmail.com> (http://olopez.com.ar/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oskosk/mapabuenosaires-to-latlng/issues"
+  }
+}
