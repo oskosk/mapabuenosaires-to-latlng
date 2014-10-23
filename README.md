@@ -8,7 +8,7 @@ Librería javascript que convierte coordenadas de proyección Buenos Aires Gauss
 ###Incluir el script minificado
 
 ```
-<script src="https://oskosk.github.io/mapabuenosaires-to-latlng/dist/mapabuenosaires-to-latlng.js"
+<script src="https://oskosk.github.io/mapabuenosaires-to-latlng/dist/mapabuenosaires-to-latlng.js"></script>
 ``` 
 
 ###Pasándole un x e y 
@@ -17,8 +17,8 @@ Es decir, pasándole unidades en metros.
 
 ```
 <script>
-  var x = // longitud (aunque en esta proyección no se puede hablar de longitud)
-  var y = // latitud (aunque en esta proyección no se puede hablar de latitud)
+  var x = 102750;// longitud (aunque en esta proyección no se puede hablar de longitud)
+  var y = 101750;// latitud (aunque en esta proyección no se puede hablar de latitud)
   var center = mapaBuenosAiresToLatLng();
   console.log(center);
 </script>
@@ -39,7 +39,7 @@ Es decir, pasándole unidades en metros.
 
 ###Pasándole el centro de un mapa creado con la API de Mapa Buenos Aires
 
-Es decir, pasándole unidades en metros.
+Es decir, pasándole el OpenLayers.LonLat que se obtiene como return de `miMapa.api.getCenter()`.
 
 ```
 <script>
