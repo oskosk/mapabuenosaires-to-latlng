@@ -21,6 +21,8 @@ Es decir, pasándole unidades en metros.
   var y = 101750;// latitud (aunque en esta proyección no se puede hablar de latitud)
   var center = mapaBuenosAiresToLatLng(x, y);
   console.log(center);
+  // Object {lat: -34.61272133494985, lon: -58.43331717987316}
+
 </script>
 ```
 
@@ -62,9 +64,24 @@ Esta librería depende de:
 
 Esta dependencia no es problema ya que al utilizar la API de Mapa buenos Aires, OpenLayers está incluido de manera predeterminada.
 
-###Proyección y Sistema de referencia utilizado en el Mapa Interactivo de Buenos Aires
+##Proyección y Sistema de referencia utilizado en el Mapa Interactivo de Buenos Aires
+
+La descripción de este sistema de referencia la podés encontrar en:
 
 https://recursos-data.buenosaires.gob.ar/ckan2/proyecciones-gkba.pdf
+
+El código Proj4 que estoy utilizando es:
+
+```
++proj=tmerc +lat_0=-34.629269 +lon_0=-58.4633 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +units=m +no_defs
+```
+
+y lo uso de esta manera:
+
+```js
+Proj4js.defs["EPSG:221951"] = "+proj=tmerc +lat_0=-34.629269 +lon_0=-58.4633 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +units=m +no_defs";
+```
+
 
 ##License
 
