@@ -14,6 +14,16 @@ Mirá el [ejemplo](http://oskosk.github.io/mapabuenosaires-to-latlng/) usando la
 <script src="https://oskosk.github.io/mapabuenosaires-to-latlng/dist/mapabuenosaires-to-latlng.js"></script>
 ``` 
 
+### O descargar mapabuenosaires-to-latlng.js
+
+Descargar `dist/mapabuenosaires-to-latlng.js` e incluirlo en el HTML.
+
+```html
+<script src="mapabuenosaires-to-latlng.js"></script>
+``` 
+
+##Conversión de un punto
+
 ###Pasándole un x e y 
 
 Es decir, pasándole unidades en metros.
@@ -24,27 +34,27 @@ Es decir, pasándole unidades en metros.
   var y = 101750;// latitud (aunque en esta proyección no se puede hablar de latitud)
   var center = mapaBuenosAiresToLatLng(x, y);
   console.log(center);
-  // Object {lat: -34.61272133494985, lon: -58.43331717987316}
+  // Object {lat: -34.61349129016636, lon: -58.433315651859154} 
 
 </script>
 ```
 
 ###Pasándole un OpenLayers.LonLat
 
-Es decir, pasándole unidades en metros.
+Es decir, pasándole `un OpenLayer.LonLat` que proviene de la proyección del mapa (en metros).
 
 ```html
 <script>
   var center = new OpenLayers.LonLat(102750, 101750)
   var center = mapaBuenosAiresToLatLng(center);
   console.log(center);
-  // Object {lat: -34.61272133494985, lon: -58.43331717987316}
+  // Object {lat: -34.61349129016636, lon: -58.433315651859154} 
 </script>
 ```
 
 ###Pasándole el centro de un mapa creado con la API de Mapa Buenos Aires
 
-Es decir, pasándole el OpenLayers.LonLat que se obtiene como return de `miMapa.api.getCenter()`.
+Es decir, pasándole el `OpenLayers.LonLat` que se obtiene como return de `miMapa.api.getCenter()`.
 
 ```html
 <script>
@@ -54,7 +64,7 @@ Es decir, pasándole el OpenLayers.LonLat que se obtiene como return de `miMapa.
   });
   var center = mapaBuenosAiresToLatLng(miMapa.api.getCenter());
   console.log(center);
-    // Object {lat: -34.61272133494985, lon: -58.43331717987316}
+  // Object {lat: -34.61349129016636, lon: -58.433315651859154} 
 
 </script>
 ```
@@ -63,8 +73,7 @@ Es decir, pasándole el OpenLayers.LonLat que se obtiene como return de `miMapa.
 
 Esta librería depende de:
 
-* **OpenLayers**. Esta dependencia no es problema ya que al utilizar la API del Mapa Interactivo de Buenos Aires, OpenLayers está incluido de manera predeterminada.
-* **Proj4**. *Ya está incluida en esta librería*.
+* [Proj4](http://trac.osgeo.org/proj4js/). *Ya está incluida en esta librería*.
 
 ##Proyección y Sistema de referencia utilizado en el Mapa Interactivo de Buenos Aires
 

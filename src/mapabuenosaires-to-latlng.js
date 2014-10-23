@@ -8,25 +8,33 @@ Proj4js.defs["EPSG:221951"] = "+proj=tmerc +lat_0=-34.6297166 +lon_0=-58.4627 +k
  * @param {Number} x. La coordenada x (Esto suele llamarse longitud pero en esta proyección no se puede hablar de longitud)* @param {Number} x. La coordenada x (Esto suele llamarse longitud pero en esta proyección no se puede hablar de longitud)
  * @param {Number} x. La coordenada y (Esto suele llamarse latitud pero en esta proyección no se puede hablar de longitud)* @param {Number} x. La coordenada x (Esto suele llamarse longitud pero en esta proyección no se puede hablar de latitud)
  * OR
- * @param {OpenLayers.LonLat} point. un punto LonLat.
+ * @param {OpenLayers.LonLat} point. un punto LonLat de OpenLayers.
+ * OR
+ * @param {Proj4js.Point} point. un punto x, y de Proj4JS.
  *
  * @returns {Object}. Latitud y longitud en WGS84 del punto.
  *   - {Float} lat.
  *   - {Float} lng.
  */
 function mapaBuenosAiresToLatLng(x, y) {
-  var point;
-  if (arguments[0] instanceof OpenLayers.LonLat) {
+  var point,
+    sourceProj = new Proj4js.Proj("EPSG:221951"),
+    destProj = new Proj4js.Proj("EPSG:4326");
+  if (window.OpenLayers && (arguments[0] instanceof OpenLayers.LonLat)) {
     point = arguments[0];
+    point = new Proj4js.Point(point.lon, point.lat);
+  } else if (arguments[0] instanceof Proj4js.Point) {
+    point = arguments[0];
+  } else if (arguments.length == 2) {
+    point = new Proj4js.Point(x, y);
   } else if (arguments.length == 1 || arguments.length == 0) {
     console.log("mapaBuenosAiresToLatLng necesita los parámetros X e Y para calcular la lat long");
     return undefined;
-  } else {
-    point = new OpenLayers.LonLat(x, y);
   }
-  var lonLat = point.transform(new OpenLayers.Projection("EPSG:221951"), "EPSG:4326");
+
+  var lonLat = Proj4js.transform(sourceProj, destProj, point);
   return {
-    lat: lonLat.lat,
-    lon: lonLat.lon,
+    lat: lonLat.y,
+    lon: lonLat.x,
   }
 }
