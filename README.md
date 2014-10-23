@@ -3,7 +3,10 @@ mapabuenosaires-to-latlng
 
 Librería javascript que convierte coordenadas de proyección [Buenos Aires Gauss Krügger](https://recursos-data.buenosaires.gob.ar/ckan2/proyecciones-gkba.pdf) a latitud longitud (WGS84).
 
+Mirá el [ejemplo](http://oskosk.github.io/mapabuenosaires-to-latlng/) usando la API del Mapa Interactivo de Buenos Aires y esta librería;
+
 ##Uso
+
 
 ###Incluir el script minificado
 
@@ -60,9 +63,8 @@ Es decir, pasándole el OpenLayers.LonLat que se obtiene como return de `miMapa.
 
 Esta librería depende de:
 
-* OpenLayers (ya que el mapa interactivo de Buenos Aires v3 utiliza OpenLayers como librería de mapas).
-
-Esta dependencia no es problema ya que al utilizar la API de Mapa buenos Aires, OpenLayers está incluido de manera predeterminada.
+* **OpenLayers**. Esta dependencia no es problema ya que al utilizar la API del Mapa Interactivo de Buenos Aires, OpenLayers está incluido de manera predeterminada.
+* **Proj4**. *Ya está incluida en esta librería*.
 
 ##Proyección y Sistema de referencia utilizado en el Mapa Interactivo de Buenos Aires
 
