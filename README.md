@@ -70,16 +70,20 @@ La descripción de este sistema de referencia la podés encontrar en:
 
 https://recursos-data.buenosaires.gob.ar/ckan2/proyecciones-gkba.pdf
 
+
+
 El código Proj4 que estoy utilizando es:
 
 ```
-+proj=tmerc +lat_0=-34.629269 +lon_0=-58.4633 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +units=m +no_defs
++proj=tmerc +lat_0=-34.6297166 +lon_0=-58.4627 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +towgs84=-148,136,90,0,0,0,0 +units=m +no_defs
 ```
+
+Lo conseguí descargando el paquete de parcelas desde data.buenosaires.gob.ar, abriéndolo con QGIS y exportando (copypaste) la declaración de proyección a PROJ4.
 
 y lo uso de esta manera:
 
 ```js
-Proj4js.defs["EPSG:221951"] = "+proj=tmerc +lat_0=-34.629269 +lon_0=-58.4633 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +units=m +no_defs";
+Proj4js.defs["EPSG:221951"] = "+proj=tmerc +lat_0=-34.6297166 +lon_0=-58.4627 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +towgs84=-148,136,90,0,0,0,0 +units=m +no_defs";
 ```
 
 

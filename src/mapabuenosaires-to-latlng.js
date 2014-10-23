@@ -1,6 +1,6 @@
 // Número definido según lo que devuelve
 // miMapa.api.getProjection().
-Proj4js.defs["EPSG:221951"] = "+proj=tmerc +lat_0=-34.629269 +lon_0=-58.4633 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +units=m +no_defs";
+Proj4js.defs["EPSG:221951"] = "+proj=tmerc +lat_0=-34.6297166 +lon_0=-58.4627 +k=0.9999980000000001 +x_0=100000 +y_0=100000 +ellps=intl +towgs84=-148,136,90,0,0,0,0 +units=m +no_defs";
 
 /**
  * Convierte una coordenada en la proyección utilizada por
